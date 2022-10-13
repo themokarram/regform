@@ -9,7 +9,7 @@ const Reg2 = () => {
         console.log("registered")
     }, [flag])
 
-    function handleData(e) {
+    const handleData =(e)=> {
 
         setInputData({ ...inputData, [e.target.name]: e.target.value })
         console.log(inputData)

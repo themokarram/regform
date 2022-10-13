@@ -19,6 +19,7 @@ const App = () => {
     //<UseReducer/>
      //<Todo/>
      <Reg2/>
+     <text />
 
   )
 }
