@@ -62,17 +62,19 @@ const SignInForm = () => {
         }
 
     })
-    const [open,setOpen]=React.useState(false);
+    const [open, setOpen] = React.useState(false);
 
-    const handleClick =()=>{
-     inputValidation() && setOpen();
-     };
-     const handleClose=(reason)=>{
-        if(reason==='clickaway'){
+    const handleClick = () => {
+        if (inputValidation) {
+            setOpen(true);
+        }
+    };
+    const handleClose = (reason) => {
+        if (reason === 'clickaway') {
             return NaN;
         }
         setOpen(false);
-     }
+    }
 
     return (
         <>
@@ -91,7 +93,7 @@ const SignInForm = () => {
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
-                            Sign in
+                            {hardcode.sign}
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField
@@ -102,7 +104,7 @@ const SignInForm = () => {
                                 label="Enter Name"
                                 name="fname"
                                 type="text"
-                                //autoComplete="name"
+                                autoComplete="name"
                                 autoFocus
                                 value={values.fname}
                                 onChange={handleChange}
@@ -154,10 +156,10 @@ const SignInForm = () => {
                                 {hardcode.sign}
                             </Button>
                             <Snackbar
-                            open={open}
-                            autoHideDuration={8000}
-                            onClose={handleClose}
-                            message="Sign In successfully"
+                                open={open}
+                                autoHideDuration={8000}
+                                onClose={handleClose}
+                                message="Sign In successfully"
                             />
                             <Grid container>
                                 <Grid item xs>
